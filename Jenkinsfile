@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("neopubl/test")
+       app = docker.build("harbor.ks.io:8443/example/node")
     }
 
     stage('Test image') {
