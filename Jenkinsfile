@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("harbor.ks.io:8443/example/node")
+       app = docker.build("neopubl/test")
     }
 
     stage('Test image') {
@@ -22,7 +22,7 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://harbor.ks.io:8443', 'harbor') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BUILD_NUMBER}")
         }
     }
