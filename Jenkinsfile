@@ -16,7 +16,7 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('https://harbor.ks.io:8443', 'harbor') {
+        docker.withRegistry('https://harbor.ks.io:8443', 'ceresinventoryHarbor') {
             app.push("${env.BUILD_NUMBER}")
         }
     }
