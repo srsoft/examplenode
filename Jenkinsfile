@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-       app = docker.build("example/node")
+       app = docker.build("ceresinventory/node")
     }
 
     stage('Test image') {
